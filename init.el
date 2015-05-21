@@ -160,6 +160,16 @@
 
 (provide 'init)
 
+;;----------------------------------------------------------------------------
+;; Customized
+;;----------------------------------------------------------------------------
+(require-package 'evil)
+(require 'evil)
+(evil-mode t)
+
+(global-set-key (kbd "\C-z") 'suspend-emacs)
+
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
