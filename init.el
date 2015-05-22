@@ -167,8 +167,11 @@
 (require 'evil)
 (evil-mode t)
 
-(global-set-key (kbd "\C-z") 'suspend-emacs)
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
 
+(global-set-key (kbd "\C-z") 'suspend-emacs)
 
 ;; Local Variables:
 ;; coding: utf-8
