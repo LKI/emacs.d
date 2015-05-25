@@ -48,6 +48,7 @@
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
+(require-package 'evil)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -104,7 +105,9 @@
 (require 'init-slime)
 (unless (version<= emacs-version "24.2")
   (require 'init-clojure)
-  (require 'init-clojure-cider))
+  (require 'init-clojure-cider)
+  (require 'evil)
+  (evil-mode t))
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -163,15 +166,14 @@
 ;;----------------------------------------------------------------------------
 ;; Customized
 ;;----------------------------------------------------------------------------
-(require-package 'evil)
-(require 'evil)
-(evil-mode t)
-
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
-(global-set-key (kbd "\C-z") 'suspend-emacs)
+;; Key bindings
+(global-set-key (kbd "C-z") #'suspend-emacs)
+
+(setf visible-bell nil) ; Disable flickering screen
 
 ;; Local Variables:
 ;; coding: utf-8
