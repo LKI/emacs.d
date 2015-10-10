@@ -117,6 +117,7 @@
 
 (require 'init-dash)
 (require 'init-ledger)
+(require 'dictionary)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
@@ -172,6 +173,7 @@
 
 ;; Key bindings
 (global-set-key (kbd "C-z") #'suspend-emacs)
+(global-set-key (kbd "<f8>") 'dictionary-lookup-definition)
 
 (setf visible-bell nil) ; Disable flickering screen
 
